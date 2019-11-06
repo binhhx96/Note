@@ -1,0 +1,49 @@
+$("#storeImage1,#storeImage2,#storeImage3").change(function (e) {
+        var maxSize = '<?= IMAGE_MAX_FILE_SIZE ?>' * 1024;
+        var self = $(this);
+        var erros = imageValidation(e, self, maxSize);
+        $(this).siblings('.msg-error').remove()
+
+        if (erros) {
+            self.val('');
+            $(this).siblings('.preImage').css('opacity', 0);
+            $(this).siblings('.store-image-part').remove();
+            $(this).siblings('.preImage').parent().append(`<span class="msg-error has_font-weight-normal">${erros}</span>`)
+        } else {
+            readImage(e, $(this).siblings('.preImage'));
+        }
+    });
+
+function readImage(e, tags, attribute) {
+    if (!attribute) {
+        attribute = 'src';
+    }
+    e.preventDefault();
+    e = e.originalEvent;
+    var target = e.dataTransfer || e.target,
+        element = $(this),
+        file = target && target.files && target.files[0],
+        options = {
+            canvas: true
+        };
+
+    if (!file) { return; }
+
+    loadImage.parseMetaData(file, function(data) {
+        if (data.exif) {
+            options.orientation = data.exif.get('Orientation');
+        } else {
+            getOrientation(file, function(val) {
+                options.orientation = val;
+            })
+        }
+
+        loadImage(file, function(canvas) {
+                var imgDataURL = canvas.toDataURL();
+                tags.attr(attribute, imgDataURL);
+                tags.css('opacity', 1);
+            },
+            options
+        );
+    });
+}
