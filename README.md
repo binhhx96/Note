@@ -38,6 +38,10 @@ sudo crontab -unginx -r #clear crontab
 
 bin/cake server -H 192.168.13.37 -p 5673
 
+# docker
+docker-compose up
+sudo docker exec -it angelnet_php /bin/sh
+
 # laravel
 npm run dev
 php artisan server
