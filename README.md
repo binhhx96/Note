@@ -53,3 +53,5 @@ UPDATE `articles` SET `number` = (number%100 + 800) WHERE SUBSTRING(number,-3,1)
 
 # SOLID
 SOLID là viết tắt của 5 chữ cái đầu trong 5 nguyên tắc thiết kế hướng đối tượng, giúp cho developer viết ra những đoạn code dễ đọc, dễ hiểu, dễ maintain
+
+# azure data studio --> connect mysql server
