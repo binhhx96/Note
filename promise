@@ -27,7 +27,7 @@ api.getUser('pikalong')
   })
   .catch(err => console.log(err))                     
                
-  Tương đương
+  # Tương đương
   
   api.getUser('pikalong')
   // Trả về một promise
