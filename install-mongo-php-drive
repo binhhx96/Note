@@ -1,0 +1,28 @@
+------------ Install Mongo Client -----------------------
+
+URL Guide: https://docs.mongodb.com/manual/tutorial/install-mongodb-on-red-hat/
+
+- Check mongo version is exist: https://repo.mongodb.org/yum/redhat/
+- change version mongo to version want to use
+- execute command
+
+
+---------------- Install MongoClient driver for php tren STG --------------------
+
+- run command :
+
+sudo pecl install mongo
+
+===========================================================
+ + neu gap loi:
+
+configure: error: Cannot find OpenSSL's <evp.h>
+ERROR: `/var/tmp/mongo/configure --with-php-config=/usr/bin/php-config --with-mongo-sasl' failed
+ -> require install openSSL first
+ -> install openSSL: yum install openssl-devel
+  + neu gap loi:
+    run command: yum clean all && yum update
+
+===========================================================
+- register to php config file : "extension=mongo.so" to php.ini
+- restart vagrant
