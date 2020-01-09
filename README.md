@@ -59,3 +59,13 @@ SOLID là viết tắt của 5 chữ cái đầu trong 5 nguyên tắc thiết k
 
 # build node js
 npm i
+
+#mongo
+- Test port: mongo --port 30000
+- Connect mongo: ssh -L 30000:localhost:27017 web_user@210.148.155.78 pass: cV9KKYSEYfon0CyssbSg
+
+#export data to file
+mysql -u webuser -p -D databasename -e  "select user_id from user where application_id = 'eazy';" > ~/UserEmptyEazy.txt
+
+#grep find
+2019-12-31.+(?=result=SUCCESS)
