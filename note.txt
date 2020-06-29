@@ -1,0 +1,88 @@
+ssh root@192.168.6.159
+*h3zIZ&oGVMC
+
+git remote update origin --prune
+sudo alien -i rpmpackage.rpm
+
+dpkg --get-selections | grep 'skype'
+sudo apt-get --purge remove skypeforlinux
+
+#php trait
+
+#vargant
+
+vagrant box list
+vagrant box add training training2.box
+vagrant up
+vagrant halt /stop vagrant
+vagrant plugin install vagrant-hostsupdater
+
+ssh vargant: vagrant ssh
+sudo chmod +x bin/cake
+
+#cakephp
+
+bin/cake migrations migrate
+bin/cake migrations seed
+
+#crontab
+crontab -l
+bin/cake CrontabRegister vagrant
+sudo crontab -unginx -l
+sudo crontab -unginx -r #clear crontab
+service crond status
+service crond stop
+service crond start
+
+#bootbox ~ Modal
+
+#open port
+/sbin/iptables -I INPUT -p tcp --dport 80 -j ACCEPT
+
+bin/cake server -H 192.168.13.37 -p 5673
+
+add column synery item
+- click show design db
+- add column
+- click synery api: assign extention for column
+ok
+
+#laravel
+npm run dev
+php artisan server
+
+UPDATE `articles` SET `number` = (number%100 + 800) WHERE SUBSTRING(number,-3,1) = 0;
+
+#playonlinux
+
+#mongo
+- mongo --port 27017 --host 52.196.234.148 --authenticationDatabase "admin" -u "Nexiv" -p
+- mongo --port 27017 --host 3.114.210.6 --authenticationDatabase "admin" -u "Nexiv" -p
+- Test port: mongo --port 30000
+- Connect mongo: ssh -L 30000:localhost:27017 web_user@210.148.155.78 pass: cV9KKYSEYfon0CyssbSg
+
+#export data to file
+mysql -u webuser -p -D databasename -e  "select user_id from user where application_id = 'eazy';" > ~/UserEmptyEazy.txt
+
+
+Japanese style punctuation: [\u3000-\u303f]
+Hiragana: [\u3040-\u309f]
+Katakana: [\u30a0-\u30ff]
+Roman characters + half-width katakana: [\uff00-\uffef]
+Kanji: [\u4e00-\u9faf]|[\u3400-\u4dbf]
+
+#check PSR error
+vendor/squizlabs/php_codesniffer/bin/phpcs --standard=PSR2 app/ bootstrap/ routes/ config/ tests/
+Remmina ~ Window remote
+
+#open new server
+cd path/to/your/app
+php -S localhost:8000
+
+   #Limit Access
+    <Directory "/www/manage/">
+        Options Includes ExecCGI FollowSymLinks
+        Order allow,deny
+        Allow from all
+        Deny from 202.241.128.103 203.141.128.109 133.242.227.105 18.179.66.145 13.114.215.129
+    </Directory>
