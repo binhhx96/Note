@@ -6,6 +6,13 @@ URL Guide: https://docs.mongodb.com/manual/tutorial/install-mongodb-on-red-hat/
 - change version mongo to version want to use
 - execute command
 
+[mongodb-org-3.0]
+name=MongoDB Repository
+baseurl=https://repo.mongodb.org/yum/redhat/$releasever/mongodb-org/3.0/x86_64/
+gpgcheck=1
+enabled=1
+gpgkey=https://www.mongodb.org/static/pgp/server-3.0.asc
+
 
 ---------------- Install MongoClient driver for php tren STG --------------------
 
