@@ -88,3 +88,9 @@ php -S localhost:8000
         Allow from all
         Deny from 202.241.128.103 203.141.128.109 133.242.227.105 18.179.66.145 13.114.215.129
     </Directory>
+    
+$start = microtime(true) * 1000;
+   $end = microtime(true) * 1000;
+   $access_log .= "Query mission: {$key} time: ". ($end - $start) . "\n";
+   $logfile = _LOG_DIR . "mission_web.log";
+   file_put_contents($logfile, $access_log, FILE_APPEND|LOCK_EX);
