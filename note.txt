@@ -9,6 +9,15 @@ sudo alien -i rpmpackage.rpm
 dpkg --get-selections | grep 'skype'
 sudo apt-get --purge remove skypeforlinux
 
+# Đo time
+$start = microtime(true) * 1000;
+$end = microtime(true) * 1000;
+$access_log .= "Query mission: {$key} time: ". ($end - $start) . "\n";
+$logfile = _LOG_DIR . "mission_web.log";
+file_put_contents($logfile, $access_log, FILE_APPEND|LOCK_EX);
+
+#scp -i WebviewKey.pem ~/woman_log.txt ip:/www
+
 #php trait
 
 #vargant
