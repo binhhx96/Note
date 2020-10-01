@@ -103,3 +103,5 @@ $start = microtime(true) * 1000;
    $access_log .= "Query mission: {$key} time: ". ($end - $start) . "\n";
    $logfile = _LOG_DIR . "mission_web.log";
    file_put_contents($logfile, $access_log, FILE_APPEND|LOCK_EX);
+
+#partitioning trong mysql
