@@ -1,3 +1,4 @@
+vi ~/.gitconfig
 [alias]
         co = checkout
         cob = checkout -b
