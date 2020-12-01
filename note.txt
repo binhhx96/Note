@@ -1,5 +1,7 @@
 TVpass: 1 240 702 000
 
+# sudo a2enmod rewrite
+
 ssh root@192.168.6.159
 *h3zIZ&oGVMC
 
