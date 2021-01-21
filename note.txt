@@ -77,6 +77,23 @@ UPDATE `articles` SET `number` = (number%100 + 800) WHERE SUBSTRING(number,-3,1)
 #export data to file
 mysql -u webuser -p -D databasename -e  "select user_id from user where application_id = 'eazy';" > ~/UserEmptyEazy.txt
 
+#export & import database
+mysqldump -p --user=username dbname tableName > tableName.sql
+mysql -u username -p dbname < tableName.sql
+
+#copy file
+scp -i WebViewKey.pem woman_support.sql ec2-user@ec2-54-65-64-144.ap-northeast-1.compute.amazonaws.com:/www
+
+#mysql utf8mb4
+ALTER TABLE support MODIFY comment text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+ALTER TABLE support_send MODIFY body text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+SHOW FULL COLUMNS FROM support;
+
+show variables like "character_set_database";
+-- or:
+-- show variables like "collation_database";
+
 
 Japanese style punctuation: [\u3000-\u303f]
 Hiragana: [\u3040-\u309f]
