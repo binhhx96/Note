@@ -1,4 +1,5 @@
 TVpass: 1 240 702 000
+#addslashes --> endcode \n
 
 # sudo a2enmod rewrite
 
