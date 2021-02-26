@@ -125,6 +125,7 @@ $start = microtime(true) * 1000;
    file_put_contents($logfile, $access_log, FILE_APPEND|LOCK_EX);
 
 #partitioning trong mysql
+#dumpautoload --> load all class in project (inclue/require class file)
 
 #Create Credentials google sheet:
 https://developers.google.com/sheets/api/quickstart/php
