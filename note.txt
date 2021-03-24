@@ -129,3 +129,5 @@ $start = microtime(true) * 1000;
 
 #Create Credentials google sheet:
 https://developers.google.com/sheets/api/quickstart/php
+
+#https://www.digitalocean.com/community/tutorials/how-to-set-up-laravel-nginx-and-mysql-with-docker-compose
