@@ -1,5 +1,5 @@
 TVpass: 1 240 702 000
-660 944 483
+1 047 326 777
 #addslashes --> endcode \n
 
 # sudo a2enmod rewrite
