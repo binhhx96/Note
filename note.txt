@@ -3,6 +3,9 @@ TVpass: 1 240 702 000
 134 035 972
 #addslashes --> endcode \n
 
+#letsencrypt
+https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/SSL-on-amazon-linux-2.html#letsencrypt
+
 # sudo a2enmod rewrite
 
 ssh root@192.168.6.159
