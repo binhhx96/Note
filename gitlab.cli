@@ -1,0 +1,26 @@
+stages:
+  - deploy-local
+  - deploy-production
+
+deploy-local:
+  stage: deploy-local
+  tags:
+    - gift-local
+  environment:
+    name: Local
+    url: http://192.168.2.100:9991/
+  when: manual
+  script:
+    - cp -rf ./docker/.env-local ./docker/.env
+    - cp -rf ./* /home/ntquser/gift-webview/gift-webview/
+
+deploy-production:
+  stage: deploy-production
+  tags:
+    - gift-production
+  environment:
+    name: Production
+    url: https://gift-call.com/
+  when: manual
+  script:
+    - cp -rf ./* /var/www/gift-webview/
