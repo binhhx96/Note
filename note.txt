@@ -1,3 +1,16 @@
+nvm, node 10.18.0
+
+Copyfish 🐟 Free OCR Software
+kole.bailey@yahoo.com
+<ErrorBoundary>: cái này mới là xử lý lỗi
+
+SELECT name,AES_DECRYPT(pwd, 'reasreas') FROM man.support_admin;
+SELECT jptime, DATE_ADD(jptime, INTERVAL -3 HOUR) FROM wlog.log202109 where type_id in (4,6,8,9,30);
+c@tktest.com/ABC@123
+ana@nn.nn/ABCabc@123
+
+https://mockapi.io/
+
 TVpass: 1 240 702 000
 1 047 326 777
 134 035 972
@@ -7,9 +20,6 @@ TVpass: 1 240 702 000
 https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/SSL-on-amazon-linux-2.html#letsencrypt
 
 # sudo a2enmod rewrite
-
-ssh root@192.168.6.159
-*h3zIZ&oGVMC
 
 git remote update origin --prune
 sudo alien -i rpmpackage.rpm
@@ -137,3 +147,41 @@ https://developers.google.com/sheets/api/quickstart/php
 
 #https://www.digitalocean.com/community/tutorials/how-to-set-up-laravel-nginx-and-mysql-with-docker-compose
 #http://www.sha1-online.com/
+
+#export & import database
+mysqldump -p --user=username dbname tableName > tableName.sql
+mysql -u username -p dbname < tableName.sql
+
+#copy file
+scp -i WebViewKey.pem woman_support.sql ec2-user@ec2-54-65-64-144.ap-northeast-1.compute.amazonaws.com:/www
+
+#mysql utf8mb4
+ALTER TABLE support MODIFY comment text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+ALTER TABLE support_send MODIFY body text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+SHOW FULL COLUMNS FROM support;
+
+show variables like "character_set_database";
+-- or:
+-- show variables like "collation_database";
+
+var response = pm.response.json();
+pm.environment.set("admin_token", response.data.token);
+console.log(pm.environment.get("admin_token"))
+
+{
+    "token":"{{admin_token}}",
+    "free_point_receiver_id":"60b6f329e9d05d7c45652757",
+    "point": 50,
+    "type_id":30,
+    "using_application":"kyuncall",
+    "api":"add_free_point"
+}
+
+
+swap memory là gì
+2. Tìm file có dung lượng >= 100MB
+sudo find / -type f -size +102400k -exec ls -lh {} \; | awk '{ print $9 ": " $5 }'
+
+3 tìm 10 file/thư mục chiếm nhiều dung lượng nhất
+du -a /var | sort -n -r | head -n 10
