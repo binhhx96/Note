@@ -188,3 +188,29 @@ du -a /var | sort -n -r | head -n 10
 
 #npm cache verify
 npm cache clear --force
+
+
+<VirtualHost *:80>
+    DocumentRoot "/www/html"
+    ServerName dev.eazy-app.com
+      ServerAlias dev.web.peach-app.net dev.web.eazy-chat.com dev.web.osakalivetalk.com dev.web.plus-chat.com dev.web.pair-live.com dev.web.fany-app.com dev.web.moa-app.com dev.web.tokyolivetalk.com local.web.eazy-app.com local.moa-app.com local.web.ochaberi.local local.web.yellowtalk-app.local
+    ErrorDocument 503 /maintenance.html
+    ErrorDocument 403 /notfound.phtml
+    ErrorDocument 404 /notfound.phtml
+
+    RewriteEngine on
+    RewriteCond %{HTTPS} !=on
+    RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+    RewriteRule ^(.*)$ http://%1$1 [R=301,L]
+
+    <Location />
+        RewriteEngine On
+        RewriteCond %{REQUEST_FILENAME} -s [OR]
+        RewriteCond %{REQUEST_FILENAME} -l [OR]
+        RewriteCond %{REQUEST_FILENAME} -d
+        RewriteRule ^.*$ - [NC,L]
+        RewriteRule ^.*$ /index.php [NC,L]
+    </Location>
+
+</VirtualHost>
+
