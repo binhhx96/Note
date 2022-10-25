@@ -1,6 +1,3 @@
-ssh root@192.168.6.159
-*h3zIZ&oGVMC
-
 git remote update origin --prune
 sudo alien -i rpmpackage.rpm
 
