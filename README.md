@@ -1,3 +1,8 @@
+- localstack --> connect aws basic
+- multi relationship -> awobaz/compoships
+- jwt authen --> php-open-source-saver/jwt-auth
+- pdf to image --> spatie/pdf-to-image
+
 git remote update origin --prune
 sudo alien -i rpmpackage.rpm
 
