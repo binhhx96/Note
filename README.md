@@ -3,6 +3,8 @@
 - jwt authen --> php-open-source-saver/jwt-auth
 - pdf to image --> spatie/pdf-to-image
 
+- ssh -4 -v -NfL 3306:ev-charging-dev-rds-mysql-instance.c1cij0umfvok.ap-northeast-1.rds.amazonaws.com:3306 ec2-user@52.195.48.182 -i ev-charging-dev-bastion-host.pem -p 22 -N
+
 git remote update origin --prune
 sudo alien -i rpmpackage.rpm
 
