@@ -1,2 +1,19 @@
 aws cli -> https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
 aws Session Manager plugin -> https://docs.aws.amazon.com/systems-manager/latest/userguide/install-plugin-debian.html
+
+export AWS_PROFILE=binh_test
+export AWS_DEFAULT_REGION=ap-northeast-1
+
+TASK_ARN=$(aws ecs list-tasks --cluster binh-test-ecs-cluster \
+    --region ap-northeast-1 \
+    --service-name binh-test-business-service \
+    --query "taskArns[0]" \
+    --output text)
+
+aws ecs execute-command --cluster binh-test-ecs-cluster \
+	--region ap-northeast-1 \
+    --task $TASK_ARN \
+    --container binh-test-business-container \
+    --interactive \
+    --command "/bin/sh"
+
