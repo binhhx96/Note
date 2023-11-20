@@ -1,3 +1,4 @@
+$columns[] = DB::raw("111.111 * DEGREES(ACOS(LEAST(1.0, COS(RADIANS(latitude)) * COS(RADIANS(?)) * COS(RADIANS(longitude - ?)) + SIN(RADIANS(latitude)) * SIN(RADIANS(?))))) AS distance");
 - ngrok --> server vitural
 - localstack --> connect aws basic
 - multi relationship -> awobaz/compoships
