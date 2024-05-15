@@ -1,3 +1,5 @@
+prisma --> db interface
+
 nvm, node 10.18.0
 
 Copyfish 🐟 Free OCR Software
